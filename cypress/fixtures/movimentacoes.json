@@ -1,0 +1,86 @@
+{
+    "ENTRADAS":{
+        "0":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"pagamento 1 valor 100 ",
+            "valor":100,
+            "interessado":"Pett",
+            "id_conta":"2194695"
+        },
+        "1":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"pagamento 2 valor 200 ",
+            "valor":200,
+            "interessado":"Pett",
+            "id_conta":"2194695"
+        },
+        "2":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"pagamento 3 valor 300 ",
+            "valor":300,
+            "interessado":"Pett",
+            "id_conta":"2194695"
+        },
+        "3":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"pagamento 4 valor 400 ",
+            "valor":400,
+            "interessado":"Pett",
+            "id_conta":"2194695"
+        },
+        "4":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"pagamento 5 valor 500 ",
+            "valor":500,
+            "interessado":"Pett",
+            "id_conta":"2194695"
+        }
+    },
+    "SAIDAS":{
+        "0":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"saida 1 valor 20 ",
+            "valor":20,
+            "interessado":"PettSaida",
+            "id_conta":"2194695"
+        },
+        "1":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"saida 2 valor 2 ",
+            "valor":2,
+            "interessado":"PettSaida",
+            "id_conta":"2194695"
+        },
+        "2":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"saida 3 valor 33 ",
+            "valor":33,
+            "interessado":"PettSaida",
+            "id_conta":"2194695"
+        },
+        "3":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"saida 4 valor 45 ",
+            "valor":45,
+            "interessado":"PettSaida",
+            "id_conta":"2194695"
+        },
+        "4":{
+            "data_transacao":"18/07/2024",
+            "data_pagamento":"18/07/2024",
+            "descricao":"saida 5 valor 57",
+            "valor":57,
+            "interessado":"PettSaida",
+            "id_conta":"2194695"
+        }
+    }
+}

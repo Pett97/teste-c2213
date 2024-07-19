@@ -1,0 +1,8 @@
+{
+  "name": "user Fixture",
+  "sobrenome":"json",
+  "sexo":"M",
+  "comida":"frango",
+  "escolaridade":"2grauincomp",
+  "esportes":["Corrida","Futebol"]
+}

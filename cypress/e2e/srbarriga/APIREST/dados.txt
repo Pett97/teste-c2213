@@ -1,0 +1,12 @@
+PettRestCypress
+PettRestCypress@gmail.com
+1234
+
+
+
+{
+    "id": 52761,
+    "nome": "PettRestCypress",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTI3NjF9.JJWp2RcxC5ar0wdh4gtRT3UNSB4j3rLLiWwNnU0PRcs"
+}
+
