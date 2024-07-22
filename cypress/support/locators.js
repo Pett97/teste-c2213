@@ -21,8 +21,8 @@ export const locators = {
     fieldAccountName: '[data-test="nome"]',
     btn_salve: ".btn",
     btn_delete: ":nth-child(2) > .far",
-    fileldNameAccount: "tbody > tr > :nth-child(1)",
-    btn_edit_account: "tr > :nth-child(2) > :nth-child(1) > .far",
+    fileldNameAccount: ':nth-child(7) > :nth-child(1)',
+    btn_edit_account: ':nth-child(7) > :nth-child(2) > :nth-child(1) > .far',
   },
   MOVEMENTS: {
     income: '[data-test="tipo-receita"]',

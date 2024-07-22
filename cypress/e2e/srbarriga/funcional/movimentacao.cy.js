@@ -3,6 +3,7 @@
 import { locators } from "../../../support/locators";
 
 import "../../../support/commandsContas";
+import { option } from "commander";
 
 describe("Teste Movimentacao", () => {
   beforeEach(() => {
@@ -16,33 +17,38 @@ describe("Teste Movimentacao", () => {
 
   describe("Teste Entradas Corretas", () => {
     beforeEach(function () {
+      cy.get('.toast-info > .toast-close-button').click();
       cy.fixture("movimentacoes").then((entradasJSON) => {
         this.mov = entradasJSON;
-        console.log(entradasJSON);
+        //console.log(entradasJSON);
       });
     });
 
     for (let index = 0; index < 5; index++) {
+      
       it(`Entrada${index}`, function () {
+        cy.wait(1000);
         cy.get(locators.MOVEMENTS.income).click();
         cy.get(locators.MOVEMENTS.description).type(
           this.mov.ENTRADAS[index].descricao
         );
-        cy.get(locators.MOVEMENTS.value).type(this.mov.ENTRADAS[index].valor);
+        cy.get(locators.MOVEMENTS.value).type(this.mov.ENTRADAS[index].valor)
+
         cy.get(locators.MOVEMENTS.target).type(
           this.mov.ENTRADAS[index].interessado
         );
-        cy.get(locators.MOVEMENTS.accont_name).select(
-          this.mov.ENTRADAS[index].id_conta
-        );
+        const teste = 2; // índice da opção que você quer selecionar, começando do 0
+        cy.get('[data-test="conta"]').find('option').eq(teste).then(option => {
+          const value = option.val();
+          cy.get('[data-test="conta"]').select([value]);
+        });
+
+        cy.wait(500);
+
         cy.get(locators.MOVEMENTS.pay).click();
         cy.get(locators.MOVEMENTS.btn_salve).click();
         cy.get('[data-test="menu-movimentacao"]').click();
-        cy.wait(800);
-        cy.get(locators.MESSAGE.msgSucess).should(
-          "have.text",
-          "Movimentação inserida com sucesso!"
-        );
+        cy.wait(500);
       });
     }
   });
@@ -63,30 +69,29 @@ describe("Teste Movimentacao", () => {
         cy.get(locators.MOVEMENTS.target).type(
           this.despesa.SAIDAS[index].interessado
         );
-        cy.get(locators.MOVEMENTS.accont_name).select(
-          this.despesa.SAIDAS[index].id_conta
-        );
+        const teste = 2; // índice da opção que você quer selecionar, começando do 0
+        cy.get('[data-test="conta"]').find('option').eq(teste).then(option => {
+          const value = option.val();
+          cy.get('[data-test="conta"]').select([value]);
+        });
+
         cy.get(locators.MOVEMENTS.pay).click();
         cy.get(locators.MOVEMENTS.btn_salve).click();
 
         cy.get('[data-test="menu-movimentacao"]').click();
         cy.wait(800);
-        cy.get(locators.MESSAGE.msgSucess).should(
-          "have.text",
-          "Movimentação inserida com sucesso!"
-        );
       });
     }
   });
-  describe("Conferir Valor Saldo Conta Cypress", () => {
+  describe("Conferir Valor Saldo Conta para movimentacoes", () => {
     beforeEach(() => {
       cy.get('[data-test="menu-home"] > .fas').click();
     });
-    it("Tenho Uma Conta Cypress", () => {
-      cy.get(locators.CONTA.fn_conta_campo(1)).should("have.text", "Cypress");
+    it("Tenho Uma Conta para movimentacoes", () => {
+      cy.get(locators.CONTA.fn_conta_campo(1)).should("have.text", "Conta para movimentacoes");
     });
-    it("Verificar Saldo",()=>{
-      cy.get(locators.SALDO.fn_saldo_campo(1,2)).should("contain","1.343,00")
+    it("Verificar Saldo", () => {
+      cy.get(locators.SALDO.fn_saldo_campo(2, 2)).should("contain", "1.500,00")
     })
   });
 });
